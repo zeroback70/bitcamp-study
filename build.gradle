@@ -1,0 +1,32 @@
+// gradle 빌드 도구에 플러그인 장착
+plugins {
+    id 'java'  // 자바 소스를 컴파일할 때 사용할 도구
+    id 'eclipse' // 이클립스 관련 파일을 다룰 때 사용할 도구
+}
+
+//자바 소스를 컴파일 할 때 적용할 옵션
+tasks.withType(JavaCompile) {
+    // javac
+    options.encoding = 'UTF-8'
+}
+
+eclipase {
+    defaultOutputDir = file('bin/okok')
+    file {
+        whenMerged {
+            entries.each {
+                if(source.kind == 'src' && !source.path)
+            }
+        }
+    }
+}
+
+// 프로젝트에서 사용할 자바 라이브러리를 다운로드 받을 때 접속할 서버
+repositories {
+    jcenter()
+}
+
+// 프로젝트에서 사용할 자바 라이브러리 목록
+dependencies {
+    // 현재 특별하게 사용할 라이브러리가 없기 때문에 일단 비워둔다.
+}
