@@ -1,6 +1,6 @@
 // dynamic sql 다루기 - <choose> 사용 법
 package com.eomcs.mybatis.ex03x;
-
+//x
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
